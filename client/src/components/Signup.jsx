@@ -9,7 +9,7 @@ const Signup = ({ theme, toggleTheme }) => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/register', formData);
+      const res = await axios.post('https://job-tracker-api-negi.onrender.com/register', formData);
       if (res.data.status === 'ok') {
         alert("Account created! Please Login.");
         navigate('/login');

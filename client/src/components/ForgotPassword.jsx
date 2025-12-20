@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   const checkEmail = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/get-security-question', { email });
+      const res = await axios.post('https://job-tracker-api-negi.onrender.com/get-security-question', { email });
       if (res.data.status === 'ok') {
         setQuestion(res.data.question);
         setStep(2);
@@ -28,7 +28,7 @@ const ForgotPassword = () => {
   const resetPassword = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/reset-password', { email, answer, newPassword });
+      const res = await axios.post('https://job-tracker-api-negi.onrender.com/reset-password', { email, answer, newPassword });
       if (res.data.status === 'ok') {
         alert("Password Reset Successful! Please Login.");
         navigate('/login');

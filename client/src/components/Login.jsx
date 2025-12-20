@@ -10,7 +10,7 @@ const Login = ({ setToken, theme, toggleTheme }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/login', { email, password });
+      const res = await axios.post('https://job-tracker-api-negi.onrender.com/login', { email, password });
       if (res.data.status === 'ok') {
         setToken(res.data.token);
         localStorage.setItem('token', res.data.token);

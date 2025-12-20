@@ -19,28 +19,28 @@ const Dashboard = ({ token, logout, theme, toggleTheme }) => {
 
   const fetchJobs = async () => {
     try {
-      const res = await axiosJWT.get('http://localhost:3001/jobs');
+      const res = await axiosJWT.get('https://job-tracker-api-negi.onrender.com/jobs');
       setJobs(res.data);
     } catch (error) { console.error(error); }
   };
 
   const addJob = async (e) => {
     e.preventDefault();
-    await axiosJWT.post('http://localhost:3001/jobs', formData);
+    await axiosJWT.post('https://job-tracker-api-negi.onrender.com/jobs', formData);
     setFormData({ company: '', position: '', notes: '', interviewDate: '', status: 'Applied' });
     fetchJobs();
   };
 
   const deleteJob = async (id) => {
     if(!confirm("Delete this application?")) return;
-    await axiosJWT.delete(`http://localhost:3001/jobs/${id}`);
+    await axiosJWT.delete(`https://job-tracker-api-negi.onrender.com/jobs/${id}`);
     fetchJobs();
   };
 
   const startEdit = (job) => { setEditingId(job._id); setEditForm(job); };
   
   const saveEdit = async () => {
-    await axiosJWT.put(`http://localhost:3001/jobs/${editingId}`, editForm);
+    await axiosJWT.put(`https://job-tracker-api-negi.onrender.com/jobs/${editingId}`, editForm);
     setEditingId(null); fetchJobs();
   };
 

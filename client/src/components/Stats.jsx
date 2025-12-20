@@ -8,7 +8,7 @@ const Stats = ({ token, logout, theme, toggleTheme }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/jobs', { headers: { Authorization: token } });
+        const res = await axios.get('https://job-tracker-api-negi.onrender.com/jobs', { headers: { Authorization: token } });
         setJobs(res.data);
       } catch (error) { console.error(error); }
     };
