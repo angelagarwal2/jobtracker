@@ -13,8 +13,16 @@ app.use(express.json());
 app.use(cors()); 
 
 // USE ENVIRONMENT VARIABLES
+// USE ENVIRONMENT VARIABLES
 const MONGO_URL = process.env.MONGO_URI; 
+const JWT_SECRET = process.env.JWT_SECRET;  // <--- ADD THIS LINE!
 const PORT = process.env.PORT || 3001; 
+
+// Safety check (optional but good)
+if (!JWT_SECRET) {
+    console.error("❌ Fatal Error: JWT_SECRET is not defined.");
+    process.exit(1);
+} 
 
 if (!MONGO_URL) {
     console.error("❌ Fatal Error: MONGO_URI is not defined.");
