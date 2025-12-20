@@ -13,7 +13,7 @@ const Navbar = ({ logout, theme, toggleTheme }) => {
 
       <div className="nav-links">
         <Link to="/dashboard" className={`nav-item ${isActive('/dashboard')}`}>Dashboard</Link>
-        <Link to="/stats" className={`nav-item ${isActive('/stats')}`}>Stats</Link>
+        <Link to="/stats" className={`nav-item ${isActive('/stats')}`}>Statistics</Link>
         <Link to="/profile" className={`nav-item ${isActive('/profile')}`}>Profile</Link>
 
         {/* Theme Toggle Button (SVG) */}
