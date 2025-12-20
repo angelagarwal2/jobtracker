@@ -1,0 +1,83 @@
+/* client/src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #F4F1EA; /* Cream */
+  color: #2B2E24; /* Forest */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #2B2E24;
+  margin-bottom: 30px;
+}
+
+/* Form Styles */
+.job-form {
+  background-color: #D8CDB6; /* Sand */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #655948; /* Cocoa */
+  flex: 1;
+}
+
+button.add-btn {
+  background-color: #899378; /* Olive */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.add-btn:hover {
+  background-color: #655948; /* Cocoa */
+}
+
+/* Job Card Styles */
+.job-card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 8px solid #B8C5A5; /* Sage */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.job-details h3 {
+  margin: 0 0 5px 0;
+}
+
+.job-details p {
+  margin: 0;
+  color: #655948;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: #a33;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}

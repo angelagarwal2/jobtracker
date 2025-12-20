@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --bg-cream: #FDFCF8;
+  --bg-white: #FFFFFF;
+  --olive-dark: #464E2E;
+  --olive-light: #606C38;
+  --gold-accent: #C5A059;
+  --text-main: #2C2C2C;
+  --text-muted: #666666;
+  --border-color: #E6E4DC;
+  --radius: 8px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+[data-theme='dark'] {
+  --bg-cream: #121212;
+  --bg-white: #1E1E1E;
+  --olive-dark: #8F9C6C;
+  --olive-light: #AAB58C;
+  --text-main: #E0E0E0;
+  --text-muted: #A0A0A0;
+  --border-color: #333;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-cream);
+  color: var(--text-main);
+  font-family: 'Lato', sans-serif;
+  transition: background-color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, .brand-font {
+  font-family: 'Playfair Display', serif;
+  color: var(--olive-dark);
+}
+
+/* LAYOUT */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* DASHBOARD GRID - THE FIX */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr; /* Fixed Sidebar width */
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+/* FORMS */
+.sidebar-form {
+  background: var(--bg-white);
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 100px;
+}
+
+label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #E0E0E0;
+  background: #FAFAFA;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  box-sizing: border-box; /* Fixes width overflow */
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--olive-dark);
+  background: var(--bg-white);
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-block; /* Fixes full width issue */
+  padding: 14px 28px;
+  background-color: var(--olive-dark);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-block;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--olive-dark);
+  border: 1px solid var(--olive-dark);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-outline:hover { background: var(--olive-dark); color: white; }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-link:hover { color: var(--olive-dark); text-decoration: underline; }
+
+.w-full { width: 100%; } /* Utility for full width buttons */
+
+.center-screen {
+  flex: 1; /* Takes available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.auth-card {
+  background: var(--bg-white);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+/* --- FORMS --- */
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #E0E0E0;
+  background: var(--bg-cream); /* Subtle background contrast */
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+input:focus { outline: none; border-color: var(--olive-dark); background: var(--bg-white); }
+
+/* NAVBAR */
+.navbar {
+  background: var(--bg-cream);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links { display: flex; align-items: center; gap: 25px; }
+
+.nav-item {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.nav-item.active { color: var(--olive-dark); font-weight: 700; }
+
+/* JOB CARD */
+.job-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 25px;
+  margin-bottom: 15px;
+  transition: transform 0.2s;
+}
+.job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ... keep your existing CSS ... */
+
+/* IMPROVED FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto; /* This pushes it to the bottom */
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: var(--bg-cream);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+[data-theme='dark'] .footer {
+  background-color: var(--bg-cream); /* Keeps consistent with dark theme bg */
+  border-top: 1px solid var(--border-color);
+}
