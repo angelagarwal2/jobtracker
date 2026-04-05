@@ -96,11 +96,11 @@ Built with a **scalable MERN architecture**, following best backend practices:
 
 ## Future Enhancements
 
-* 📅 Interview scheduling & reminders
-* 📊 Analytics dashboard (charts & trends)
-* 📎 Resume & document management
-* 🤖 AI-powered job recommendations
-* 🌐 Multi-device sync & cloud backup
+* Interview scheduling & reminders
+* Analytics dashboard (charts & trends)
+* Resume & document management
+* AI-powered job recommendations
+* Multi-device sync & cloud backup
 
 ---
 
